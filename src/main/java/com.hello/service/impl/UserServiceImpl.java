@@ -22,7 +22,21 @@ public class UserServiceImpl implements IUserService {
     @Override
     public User selectUser(long userId) {
         return this.userDao.selectUser(userId);
+    }
 
+    @Override
+    public void insertUser(User user) {
+        this.userDao.insertUser(user);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        this.userDao.updateUser(user);
+    }
+
+    @Override
+    public void deleteUser(User user) {
+        this.userDao.deleteUser(user);
     }
 
 }

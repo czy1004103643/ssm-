@@ -15,11 +15,34 @@
         // xmlhttp.open("POST", "user/showUser.do", true);
         // xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         // xmlhttp.send("id=1");
-        window.location.href = "user/showUser.do?id=1";
+        window.location.href = "user/showUser?id=1";
+    }
+
+    function toInsertUser() {
+        window.location.href = "user/insertUser";
+    }
+
+    function toUpdateUser() {
+        window.location.href = "user/updateUser";
+    }
+
+    function toDeleteUser() {
+        window.location.href = "user/deleteUser";
     }
 </script>
 <body>
 <p id="test">Hello World</p>
-<button type="button" onclick="toSelectUser()">to select user</button>
+<div>
+    <button type="button" onclick="toSelectUser()">to select user</button>
+</div>
+<div>
+    <button type="button" onclick="toInsertUser()">insert user</button>
+</div>
+<div>
+    <button type="button" onclick="toUpdateUser()">update user</button>
+</div>
+<div>
+    <button type="button" onclick="toDeleteUser()">delete user</button>
+</div>
 </body>
 </html>

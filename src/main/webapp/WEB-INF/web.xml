@@ -43,4 +43,13 @@
     <welcome-file>/WEB-INF/View/index.html</welcome-file>
   </welcome-file-list>
 
+  <listener>
+    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
+
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>classpath:log4j.properties</param-value>
+  </context-param>
+
 </web-app>

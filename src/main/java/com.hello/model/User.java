@@ -20,6 +20,13 @@ public class User {
     private String regIp;
 
     public User() {
+        email = "@qq.com";
+        password = "";
+        username = "";
+        role = "";
+        status = 0;
+        regTime = new Date();
+        regIp = "";
     }
 
     public long getId() {
