@@ -4,7 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hello.model.User;
 import com.hello.service.IUserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -25,14 +27,14 @@ public class UserController {
     private IUserService userService;
 
     @RequestMapping("/showUser.do")
-    public void selectUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public ModelAndView  selectUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        ModelAndView mv = new ModelAndView();
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         long userId = Long.parseLong(request.getParameter("id"));
         User user = this.userService.selectUser(userId);
-        ObjectMapper mapper = new ObjectMapper();
-        response.getWriter().write(mapper.writeValueAsString(user));
-
-        response.getWriter().close();
+        mv.addObject("message", user.toString());
+        mv.setViewName("user_select");
+        return mv;
     }
 }
