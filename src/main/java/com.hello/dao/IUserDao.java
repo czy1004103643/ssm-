@@ -3,10 +3,10 @@ package com.hello.dao;
 import com.hello.model.User;
 
 /**
- * project helloSSM
- * authod wuyanhui
- * datetime 2017/11/23 16:17
- * desc
+ * project #project
+ * authod #authod
+ * datetime #datatime
+ * desc  #desc
  */
 public interface IUserDao {
     User selectUser(long id);

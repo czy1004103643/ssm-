@@ -1,12 +1,13 @@
 package com.hello.model;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
- * project helloSSM
- * authod wuyanhui
- * datetime 2017/11/23 16:17
- * desc
+ * project #project
+ * authod #authod
+ * datetime #datatime
+ * desc  #desc
  */
 
 public class User {
@@ -27,6 +28,17 @@ public class User {
         status = 0;
         regTime = new Date();
         regIp = "";
+    }
+
+    public User(long id, String email, String password, String username, String role, int status, Date regTime, String regIp) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.username = username;
+        this.role = role;
+        this.status = status;
+        this.regTime = regTime;
+        this.regIp = regIp;
     }
 
     public long getId() {
@@ -91,6 +103,26 @@ public class User {
 
     public void setRegIp(String regIp) {
         this.regIp = regIp;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id &&
+                status == user.status &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(username, user.username) &&
+                Objects.equals(role, user.role) &&
+                Objects.equals(regTime, user.regTime) &&
+                Objects.equals(regIp, user.regIp);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, email, password, username, role, status, regTime, regIp);
     }
 
     @Override

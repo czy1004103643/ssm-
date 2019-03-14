@@ -1,5 +1,11 @@
 package com.hello.utils;
 
+/**
+ * project #project
+ * authod #authod
+ * datetime #datatime
+ * desc  #desc
+ */
 public class Logger {
 
     private org.apache.log4j.Logger logger;

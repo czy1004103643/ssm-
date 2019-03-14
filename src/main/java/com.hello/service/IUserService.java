@@ -2,6 +2,13 @@ package com.hello.service;
 
 import com.hello.model.User;
 
+/**
+ * project #project
+ * authod #authod
+ * datetime #datatime
+ * desc  #desc
+ */
+
 public interface IUserService {
     public User selectUser(long userId);
 
